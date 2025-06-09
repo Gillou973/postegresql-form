@@ -113,7 +113,7 @@ function App() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('http://localhost:3001/api/contacts', {
+      const response = await fetch('http://localhost:3000/users', {
         method: 'POST',
         body: JSON.stringify(formData),
         headers: {

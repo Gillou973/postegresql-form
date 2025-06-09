@@ -79,3 +79,26 @@ CREATE TABLE contacts (
 
 
 # postegresql-form
+
+```sql
+CREATE TABLE users (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    nom VARCHAR(100) NOT NULL,
+    prenom VARCHAR(100) NOT NULL,
+    adresse TEXT NOT NULL,
+    email VARCHAR(150) NOT NULL UNIQUE,
+    telephone VARCHAR(20) NOT NULL,
+    date_creation TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+```sql
+INSERT INTO users (nom, prenom, adresse, email, telephone)
+VALUES
+  ('Dupont', 'Jean', '12 rue des Fleurs, 75000 Paris', 'jean.dupont@email.com', '0102030405'),
+  ('Martin', 'Claire', '45 avenue des Champs, 69000 Lyon', 'claire.martin@email.com', '0203040506'),
+  ('Nguyen', 'Minh', '78 boulevard du Midi, 13000 Marseille', 'minh.nguyen@email.com', '0304050607'),
+  ('Moreau', 'Luc', '5 rue Victor Hugo, 31000 Toulouse', 'luc.moreau@email.com', '0405060708'),
+  ('Legrand', 'Sophie', '22 place Bellecour, 69002 Lyon', 'sophie.legrand@email.com', '0506070809');
+  
+```
